@@ -1,0 +1,37 @@
+<div class="banner">
+  <div class="container">
+    <h1>Your <strong>Movie Lists</strong>.</h1>
+    <p>Access all your created lists here!</p>
+    <a href="#create" class="btn btn-flat">Add a new List</a>
+    <%# <%= link_to "Add a new List", new_list_path, class: 'btn btn-flat' %> %>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Your lists</h1>
+        <% @lists.each do |list| %>
+          <div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/1000/1200)">
+            <span class="link-list">
+              <%= link_to list.name, list_path(list) %>
+            </span>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="create">
+  <div class="row mt-3">
+    <h2>Create a new list:</h2>
+  </div>
+  <div class="row ">
+    <%= simple_form_for(@list) do |f| %>
+          <%= f.input :name %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+  </div>
+</div>

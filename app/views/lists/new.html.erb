@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row mt-3">
+    <h2>Create a new list:</h2>
+  </div>
+  <div class="row ">
+    <%= simple_form_for(@list) do |f| %>
+          <%= f.input :name %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+  </div>
+</div>
